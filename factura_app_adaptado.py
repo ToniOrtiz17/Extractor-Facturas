@@ -10,7 +10,7 @@ import fitz  # PyMuPDF
 
 st.set_page_config(page_title="Factura Luz App", layout="centered")
 st.image("assets/logo_asesor.png", width=120)
-st.title("Factura Luz App - Toni Ortiz")
+st.title("Comparador de facturas de luz- Toni Ortiz")
 st.write("Extrae automáticamente datos clave de tus facturas de luz.")
 
 EXCEL_PATH = os.path.expanduser("~/OneDrive/FacturasComparadas/facturas_comparadas.xlsx")
