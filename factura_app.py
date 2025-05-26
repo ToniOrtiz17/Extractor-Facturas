@@ -9,8 +9,8 @@ import re
 import fitz  # PyMuPDF
 
 st.set_page_config(page_title="Factura Luz App", layout="centered")
-st.title("Extractor de datos para facturas de luz")
-st.write("Extrae automáticamente datos clave de tus facturas de luz.")
+st.title("Extractor de datos para facturas")
+st.write("(Extrae automáticamente datos clave de tus facturas de luz)")
 
 EXCEL_PATH = os.path.expanduser("~/OneDrive/FacturasComparadas/facturas_comparadas.xlsx")
 os.makedirs(os.path.dirname(EXCEL_PATH), exist_ok=True)
@@ -34,7 +34,7 @@ def extraer_datos(texto):
     resultado = {}
     for campo, match in datos.items():
         if match:
-            if campo == "Periodo Facturación":
+            if campo == "Periodo de Facturación":
                 resultado[campo] = f"{match.group(1)} – {match.group(2)}"
             elif campo == "IVA (€)":
                 resultado[campo] = match.group(2).replace(",", ".")
